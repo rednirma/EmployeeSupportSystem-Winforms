@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp1
 {
     class UserCommonData
@@ -268,7 +269,7 @@ namespace WindowsFormsApp1
             {
                 if (T.Status == 2 )
                 {
-                    string sql = "UPDATE Tickets SET Status=0,AssignedTo=@assi WHERE TicketId=@ID";
+                    string sql = "UPDATE Tickets SET Status=0,AssignedTo=@assi,AssignedAt=SYSDATETIME() WHERE TicketId=@ID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@ID", T.TicketID);
@@ -299,7 +300,7 @@ namespace WindowsFormsApp1
                 
                  if (T.Status == 0)
                 {
-                    string sql = "UPDATE Tickets SET Status=1 WHERE TicketId=@ID";
+                    string sql = "UPDATE Tickets SET Status=1 ,ActiveAt=SYSDATETIME() WHERE TicketId=@ID ";
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@ID", T.TicketID);
@@ -311,7 +312,7 @@ namespace WindowsFormsApp1
                 }
                 else if (T.Status == 1)
                 {
-                    string sql = "UPDATE Tickets SET Status=5 WHERE TicketId=@ID";
+                    string sql = "UPDATE Tickets SET Status=5, ResolvedAt=SYSDATETIME() WHERE TicketId=@ID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@ID", T.TicketID);
@@ -370,6 +371,7 @@ namespace WindowsFormsApp1
             finally { conn.Close(); }
             return isSuccess;
         }
+       
     }
 
 }

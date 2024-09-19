@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
@@ -39,6 +40,7 @@ namespace WindowsFormsApp1
             AllTicketsDGV.Hide();
             UserListDGV.Hide();
             AdminChart.Show();
+            //Fillchart();
         }
 
         private void ViewTicketsBtn_Click(object sender, EventArgs e)
@@ -106,6 +108,7 @@ namespace WindowsFormsApp1
             AssiTo = AgentSelectCBox.Text;
         }
 
+
         private void UserListDGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rowIndex = e.RowIndex;
@@ -161,5 +164,19 @@ namespace WindowsFormsApp1
             ticST = Convert.ToInt32( AllTicketsDGV.Rows[rowIndex].Cells[5].Value);
 
         }
+        //public void Fillchart()
+        //{
+        //    SqlConnection conn = new SqlConnection("data source=7231AMRIND4168L;initial catalog=EMSS;trusted_connection=true");
+        //    DataTable dt = new DataTable();
+        //    conn.Open();
+        //    SqlDataAdapter da = new SqlDataAdapter("select DATEDIFF(MINUTE, (select CreatedAt from Tickets where TicketID='TICKET-036900A1'),(select AssignedAt from Tickets where TicketID='TICKET-036900A1') ) AS Time_Taken_To_Assign\r\n,DATEDIFF(MINUTE, (select AssignedAt from Tickets where TicketID='TICKET-036900A1'),(select ActiveAt from Tickets where TicketID='TICKET-036900A1') ) AS Time_Taken_To_Activate\r\n,DATEDIFF(MINUTE, (select ActiveAt from Tickets where TicketID='TICKET-036900A1'),(select ResolvedAt from Tickets where TicketID='TICKET-036900A1') ) AS Time_Taken_To_Activate;",conn);
+        //    da.Fill(dt);
+        //    AdminChart.DataSource = dt;
+        //    conn.Close();
+        //    AdminChart.Series["Series 1"].XValueMember = "min";
+        //    AdminChart.Series["Series 1"].YValueMembers = "min";
+
+
+        //}
     }
 }

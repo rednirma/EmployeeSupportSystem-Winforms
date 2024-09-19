@@ -101,6 +101,7 @@
             this.agent1.Name = "agent1";
             this.agent1.Size = new System.Drawing.Size(600, 420);
             this.agent1.TabIndex = 3;
+            this.agent1.Load += new System.EventHandler(this.agent1_Load);
             // 
             // emp1
             // 

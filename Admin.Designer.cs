@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.UserListDGV = new System.Windows.Forms.DataGridView();
             this.AllTicketsDGV = new System.Windows.Forms.DataGridView();
             this.AdminChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -75,16 +75,16 @@
             // 
             // AdminChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.AdminChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.AdminChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.AdminChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.AdminChart.Legends.Add(legend1);
             this.AdminChart.Location = new System.Drawing.Point(59, 88);
             this.AdminChart.Name = "AdminChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.AdminChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.AdminChart.Series.Add(series1);
             this.AdminChart.Size = new System.Drawing.Size(482, 280);
             this.AdminChart.TabIndex = 2;
             this.AdminChart.Text = "chart1";
@@ -199,9 +199,9 @@
             this.Controls.Add(this.ViewTicketsBtn);
             this.Controls.Add(this.ViewAnalyticsBtn);
             this.Controls.Add(this.AdminHeading);
+            this.Controls.Add(this.AdminChart);
             this.Controls.Add(this.AllTicketsDGV);
             this.Controls.Add(this.UserListDGV);
-            this.Controls.Add(this.AdminChart);
             this.Name = "Admin";
             this.Size = new System.Drawing.Size(600, 420);
             this.Load += new System.EventHandler(this.Admin_Load);

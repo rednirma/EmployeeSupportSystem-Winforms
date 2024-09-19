@@ -106,5 +106,10 @@ namespace WindowsFormsApp1
             PasswordBoxLogin.Text = "";
 
         }
+
+        private void agent1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
