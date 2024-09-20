@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,17 @@ namespace WindowsFormsApp1
         {
            
             EmployeeChart.Hide();
+            EmployeeChart.Hide();
             EmployeeTicketsDGV.Hide();
+            
+        }
+        public void HidEmp()
+        {
+
+            EmployeeChart.Hide();
+            EmployeeChart.Hide();
+            EmployeeTicketsDGV.Hide();
+
         }
 
         private void ShowTicketsBtn_Click(object sender, EventArgs e)
@@ -41,6 +52,7 @@ namespace WindowsFormsApp1
         {
             EmployeeChart.Show();
             EmployeeTicketsDGV.Hide();
+            Fillchart();
         }
 
         private void CreateNewTicketBtn_Click(object sender, EventArgs e)
@@ -53,6 +65,30 @@ namespace WindowsFormsApp1
 
         private void EmployeeChart_Click(object sender, EventArgs e)
         {
+
+        }
+        public void Fillchart()
+        {
+            SqlConnection conn = new SqlConnection("data source=7231AMRIND4168L;initial catalog=EMSS;trusted_connection=true");
+            DataSet dt = new DataSet();
+            conn.Open();
+            string sql = "select AssignedTo,TicketIDre,Time_Taken_To_Activate,Time_Taken_To_Assign,Time_Taken_To_Resolve from Tickets right join TicketTime on Tickets.TicketID=TicketTime.TicketIDre where CreatedBy=@ato;";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@ato", Form1.id);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            //AdminChart.DataSource = dt;
+            DataView source = new DataView(dt.Tables[0]);
+            EmployeeChart.DataSource = source;
+            conn.Close();
+            EmployeeChart.Series["Time_Taken_To_Assign"].XValueMember = "TicketIDre";
+            EmployeeChart.Series["Time_Taken_To_Assign"].YValueMembers = "Time_Taken_To_Assign";
+            EmployeeChart.Series["Time_Taken_To_Activate"].XValueMember = "TicketIDre";
+            EmployeeChart.Series["Time_Taken_To_Activate"].YValueMembers = "Time_Taken_To_Activate";
+            EmployeeChart.Series["Time_Taken_To_Resolve"].XValueMember = "TicketIDre";
+            EmployeeChart.Series["Time_Taken_To_Resolve"].YValueMembers = "Time_Taken_To_Resolve";
+            EmployeeChart.DataBind();
 
         }
     }

@@ -107,7 +107,9 @@ namespace WindowsFormsApp1
             LogoutBtn.Hide();
             IdBoxLogin.Text = "";
             PasswordBoxLogin.Text = "";
-
+            emp1.HidEmp();
+            agent1.HidAgent();
+            admin1.HideEverything();    
         }
 
         private void agent1_Load(object sender, EventArgs e)

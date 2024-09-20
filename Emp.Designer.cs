@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.EmployeeLabel = new System.Windows.Forms.Label();
             this.ShowTicketsBtn = new System.Windows.Forms.Button();
             this.EmployeeTicketsDGV = new System.Windows.Forms.DataGridView();
@@ -75,15 +76,33 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.EmployeeChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.EmployeeChart.Legends.Add(legend1);
-            this.EmployeeChart.Location = new System.Drawing.Point(59, 88);
+            this.EmployeeChart.Location = new System.Drawing.Point(0, 88);
             this.EmployeeChart.Name = "EmployeeChart";
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series1.CustomProperties = "PixelPointWidth=25";
+            series1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.Name = "Time_Taken_To_Assign";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series2.CustomProperties = "PixelPointWidth=25";
+            series2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.Name = "Time_Taken_To_Activate";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series3.CustomProperties = "PixelPointWidth=25";
+            series3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsValueShownAsLabel = true;
+            series3.Name = "Time_Taken_To_Resolve";
             this.EmployeeChart.Series.Add(series1);
-            this.EmployeeChart.Size = new System.Drawing.Size(482, 280);
+            this.EmployeeChart.Series.Add(series2);
+            this.EmployeeChart.Series.Add(series3);
+            this.EmployeeChart.Size = new System.Drawing.Size(597, 280);
             this.EmployeeChart.TabIndex = 4;
             this.EmployeeChart.Text = "chart1";
             this.EmployeeChart.Click += new System.EventHandler(this.EmployeeChart_Click);

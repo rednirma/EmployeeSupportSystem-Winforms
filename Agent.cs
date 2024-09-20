@@ -47,8 +47,16 @@ namespace WindowsFormsApp1
             
             AgentChart.Hide();
             AgentListDGV.Hide();
+            AgentChart.Hide();
             DataTable dt = TIC.SelectTicketsByAssignVal(Form1.id);
             AgentListDGV.DataSource = dt;
+        }
+        public void HidAgent()
+        {
+            
+            AgentChart.Hide();
+            AgentListDGV.Hide();
+            AgentChart.Hide();
         }
 
         private void UpdateTicketBtn_Click(object sender, EventArgs e)

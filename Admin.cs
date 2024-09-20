@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             HideEverything();
         }
 
-        private void HideEverything()
+        public void HideEverything()
         { 
             AllTicketsDGV.Hide();
             UserListDGV.Hide();

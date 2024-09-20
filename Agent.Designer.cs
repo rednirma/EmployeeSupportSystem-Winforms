@@ -37,11 +37,11 @@
             this.ShowAgentAnalyticsBtn = new System.Windows.Forms.Button();
             this.AgentListDGV = new System.Windows.Forms.DataGridView();
             this.AgentChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eMSSDataSet = new WindowsFormsApp1.EMSSDataSet();
             this.ShowTicketBtn = new System.Windows.Forms.Button();
             this.UpdateTicketBtn = new System.Windows.Forms.Button();
             this.RevertStatusBtn = new System.Windows.Forms.Button();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMSSDataSet = new WindowsFormsApp1.EMSSDataSet();
             this.ticketsTableAdapter = new WindowsFormsApp1.EMSSDataSetTableAdapters.TicketsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AgentListDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgentChart)).BeginInit();
@@ -90,21 +90,21 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series1.CustomProperties = "PixelPointWidth=30";
+            series1.CustomProperties = "PixelPointWidth=25";
             series1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.IsValueShownAsLabel = true;
             series1.Name = "Time_Taken_To_Assign";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            series2.CustomProperties = "PixelPointWidth=30";
+            series2.CustomProperties = "PixelPointWidth=25";
             series2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series2.IsValueShownAsLabel = true;
             series2.Name = "Time_Taken_To_Activate";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            series3.CustomProperties = "PixelPointWidth=30";
+            series3.CustomProperties = "PixelPointWidth=25";
             series3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series3.IsValueShownAsLabel = true;
             series3.Name = "Time_Taken_To_Resolve";
@@ -115,6 +115,16 @@
             this.AgentChart.TabIndex = 3;
             this.AgentChart.Text = "chart1";
             this.AgentChart.Click += new System.EventHandler(this.AgentChart_Click);
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.eMSSDataSet;
+            // 
+            // eMSSDataSet
+            // 
+            this.eMSSDataSet.DataSetName = "EMSSDataSet";
+            this.eMSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ShowTicketBtn
             // 
@@ -145,16 +155,6 @@
             this.RevertStatusBtn.Text = "Revert Status";
             this.RevertStatusBtn.UseVisualStyleBackColor = true;
             this.RevertStatusBtn.Click += new System.EventHandler(this.RevertStatusBtn_Click);
-            // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.eMSSDataSet;
-            // 
-            // eMSSDataSet
-            // 
-            this.eMSSDataSet.DataSetName = "EMSSDataSet";
-            this.eMSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ticketsTableAdapter
             // 
