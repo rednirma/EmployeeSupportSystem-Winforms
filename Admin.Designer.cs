@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.UserListDGV = new System.Windows.Forms.DataGridView();
             this.AllTicketsDGV = new System.Windows.Forms.DataGridView();
             this.AdminChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -57,6 +58,8 @@
             // 
             // UserListDGV
             // 
+            this.UserListDGV.AllowUserToAddRows = false;
+            this.UserListDGV.AllowUserToDeleteRows = false;
             this.UserListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UserListDGV.Location = new System.Drawing.Point(59, 88);
             this.UserListDGV.Name = "UserListDGV";
@@ -66,7 +69,10 @@
             // 
             // AllTicketsDGV
             // 
+            this.AllTicketsDGV.AllowUserToAddRows = false;
+            this.AllTicketsDGV.AllowUserToDeleteRows = false;
             this.AllTicketsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AllTicketsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.AllTicketsDGV.Location = new System.Drawing.Point(59, 88);
             this.AllTicketsDGV.Name = "AllTicketsDGV";
             this.AllTicketsDGV.Size = new System.Drawing.Size(480, 280);
@@ -77,15 +83,44 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.AdminChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.AdminChart.Legends.Add(legend1);
-            this.AdminChart.Location = new System.Drawing.Point(59, 88);
+            this.AdminChart.Location = new System.Drawing.Point(0, 88);
             this.AdminChart.Name = "AdminChart";
+            series1.BorderWidth = 0;
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series1.CustomProperties = "PixelPointWidth=25";
+            series1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LegendText = "Time Taken To Assign";
+            series1.LegendToolTip = "Time Taken to Assign ";
+            series1.Name = "Time_Taken_To_Assign";
+            series1.ToolTip = "Time Taken to Assign";
+            series2.BorderWidth = 0;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series2.CustomProperties = "PixelPointWidth=25";
+            series2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.LegendText = "Time Taken To Activate";
+            series2.LegendToolTip = "Time Taken to Activate";
+            series2.Name = "Time_Taken_To_Activate";
+            series2.ToolTip = "Time Taken to Activate";
+            series3.BorderWidth = 0;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series3.CustomProperties = "PixelPointWidth=25";
+            series3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsValueShownAsLabel = true;
+            series3.LegendToolTip = "Time Taken to Resolve ";
+            series3.Name = "Time_Taken_To_Resolve";
+            series3.ToolTip = "Time Taken to Resolve";
             this.AdminChart.Series.Add(series1);
-            this.AdminChart.Size = new System.Drawing.Size(482, 280);
+            this.AdminChart.Series.Add(series2);
+            this.AdminChart.Series.Add(series3);
+            this.AdminChart.Size = new System.Drawing.Size(597, 280);
             this.AdminChart.TabIndex = 2;
             this.AdminChart.Text = "chart1";
             // 

@@ -37,6 +37,7 @@
             // 
             // TicketSubjectTextBox
             // 
+            this.TicketSubjectTextBox.BackColor = System.Drawing.Color.Yellow;
             this.TicketSubjectTextBox.Location = new System.Drawing.Point(258, 119);
             this.TicketSubjectTextBox.Name = "TicketSubjectTextBox";
             this.TicketSubjectTextBox.Size = new System.Drawing.Size(295, 20);
@@ -56,7 +57,7 @@
             // 
             this.TicketSubLabel.AutoSize = true;
             this.TicketSubLabel.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketSubLabel.Location = new System.Drawing.Point(255, 103);
+            this.TicketSubLabel.Location = new System.Drawing.Point(255, 96);
             this.TicketSubLabel.Name = "TicketSubLabel";
             this.TicketSubLabel.Size = new System.Drawing.Size(55, 18);
             this.TicketSubLabel.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             this.DiscLabel.AutoSize = true;
             this.DiscLabel.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DiscLabel.Location = new System.Drawing.Point(255, 166);
+            this.DiscLabel.Location = new System.Drawing.Point(255, 159);
             this.DiscLabel.Name = "DiscLabel";
             this.DiscLabel.Size = new System.Drawing.Size(75, 18);
             this.DiscLabel.TabIndex = 4;
@@ -74,15 +75,18 @@
             // 
             // DiscTextBox
             // 
+            this.DiscTextBox.BackColor = System.Drawing.Color.Yellow;
             this.DiscTextBox.Location = new System.Drawing.Point(258, 182);
             this.DiscTextBox.Name = "DiscTextBox";
             this.DiscTextBox.Size = new System.Drawing.Size(295, 20);
             this.DiscTextBox.TabIndex = 3;
+            this.DiscTextBox.TextChanged += new System.EventHandler(this.DiscTextBox_TextChanged);
             // 
             // create_new_ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DiscLabel);
             this.Controls.Add(this.DiscTextBox);

@@ -30,11 +30,7 @@ namespace WindowsFormsApp1
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            PassLabel.Hide();
-            IdLabel.Hide();
-            LoginBtn.Hide();
-            PasswordBoxLogin.Hide();
-            IdBoxLogin.Hide();
+            
             UCD.Id = IdBoxLogin.Text;
             UCD.Password = PasswordBoxLogin.Text;
             id = IdBoxLogin.Text;
@@ -43,6 +39,11 @@ namespace WindowsFormsApp1
 
             if (IsSuccess)
             {
+                PassLabel.Hide();
+                IdLabel.Hide();
+                LoginBtn.Hide();
+                PasswordBoxLogin.Hide();
+                IdBoxLogin.Hide();
                 MessageBox.Show("you are logged in ");
 
                 UCD.UserRole = UCD.CheckUserRole(UCD.Id, UCD.Password);
@@ -86,6 +87,8 @@ namespace WindowsFormsApp1
             }
             else
             {
+                PasswordBoxLogin.Text="";
+                IdBoxLogin.Text="";
                 MessageBox.Show("you are NOT logged in");
 
             }

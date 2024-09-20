@@ -60,5 +60,10 @@ namespace WindowsFormsApp1
             }
             if(created)this.Close();
         }
+
+        private void DiscTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

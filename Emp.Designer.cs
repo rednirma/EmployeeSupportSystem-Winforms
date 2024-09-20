@@ -63,6 +63,8 @@
             // 
             // EmployeeTicketsDGV
             // 
+            this.EmployeeTicketsDGV.AllowUserToAddRows = false;
+            this.EmployeeTicketsDGV.AllowUserToDeleteRows = false;
             this.EmployeeTicketsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeTicketsDGV.Location = new System.Drawing.Point(59, 88);
             this.EmployeeTicketsDGV.Name = "EmployeeTicketsDGV";
@@ -84,6 +86,7 @@
             this.EmployeeChart.Size = new System.Drawing.Size(482, 280);
             this.EmployeeChart.TabIndex = 4;
             this.EmployeeChart.Text = "chart1";
+            this.EmployeeChart.Click += new System.EventHandler(this.EmployeeChart_Click);
             // 
             // ShowAnalyticsBtn
             // 
@@ -112,10 +115,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.CreateNewTicketBtn);
             this.Controls.Add(this.ShowAnalyticsBtn);
-            this.Controls.Add(this.EmployeeChart);
-            this.Controls.Add(this.EmployeeTicketsDGV);
             this.Controls.Add(this.ShowTicketsBtn);
             this.Controls.Add(this.EmployeeLabel);
+            this.Controls.Add(this.EmployeeChart);
+            this.Controls.Add(this.EmployeeTicketsDGV);
             this.Name = "Emp";
             this.Size = new System.Drawing.Size(600, 420);
             this.Load += new System.EventHandler(this.Emp_Load);

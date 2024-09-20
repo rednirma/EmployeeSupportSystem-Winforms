@@ -270,13 +270,17 @@ namespace WindowsFormsApp1
                 if (T.Status == 2 )
                 {
                     string sql = "UPDATE Tickets SET Status=0,AssignedTo=@assi,AssignedAt=SYSDATETIME() WHERE TicketId=@ID";
+                    string sql1 = "insert into TicketTime (TicketIDre,Time_Taken_To_Assign) values (@ID,DATEDIFF(MINUTE, (select CreatedAt from Tickets where TicketID=@ID),(select AssignedAt from Tickets where TicketID=@ID )))";
                     SqlCommand cmd = new SqlCommand(sql, conn);
+                    SqlCommand cmd1 = new SqlCommand(sql1, conn);
 
                     cmd.Parameters.AddWithValue("@ID", T.TicketID);
+                    cmd1.Parameters.AddWithValue("@ID", T.TicketID);
                     cmd.Parameters.AddWithValue("@assi", T.AssignedTo);
                     conn.Open();
-
                     int rows = cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
+
                     if (rows > 0) { isSuccess = true; }
                     else { isSuccess = false; }
                 }
@@ -302,11 +306,15 @@ namespace WindowsFormsApp1
                 {
                     string sql = "UPDATE Tickets SET Status=1 ,ActiveAt=SYSDATETIME() WHERE TicketId=@ID ";
                     SqlCommand cmd = new SqlCommand(sql, conn);
+                    string sql1 = "Update TicketTime set Time_Taken_To_Activate=DATEDIFF(MINUTE, (select AssignedAt from Tickets where TicketID=@ID),(select ActiveAt from Tickets where TicketID=@ID )) Where TicketIDre=@ID;";
+                    SqlCommand cmd1 = new SqlCommand(sql1, conn);
 
                     cmd.Parameters.AddWithValue("@ID", T.TicketID);
+                    cmd1.Parameters.AddWithValue("@ID", T.TicketID);
                     conn.Open();
 
                     int rows = cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
                     if (rows > 0) { isSuccess = true; }
                     else { isSuccess = false; }
                 }
@@ -314,11 +322,15 @@ namespace WindowsFormsApp1
                 {
                     string sql = "UPDATE Tickets SET Status=5, ResolvedAt=SYSDATETIME() WHERE TicketId=@ID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
+                    string sql1 = "Update TicketTime set Time_Taken_To_Resolve=DATEDIFF(MINUTE, (select ActiveAt from Tickets where TicketID=@ID),(select ResolvedAt from Tickets where TicketID=@ID )) Where TicketIDre=@ID;";
+                    SqlCommand cmd1 = new SqlCommand(sql1, conn);
 
                     cmd.Parameters.AddWithValue("@ID", T.TicketID);
+                    cmd1.Parameters.AddWithValue("@ID", T.TicketID);
                     conn.Open();
 
                     int rows = cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
                     if (rows > 0) { isSuccess = true; }
                     else { isSuccess = false; }
                 }

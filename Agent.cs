@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,7 @@ namespace WindowsFormsApp1
         {
             AgentChart.Show();
             AgentListDGV.Hide();
+            Fillchart();
         }
 
         private void ShowTicketBtn_Click(object sender, EventArgs e)
@@ -90,6 +92,35 @@ namespace WindowsFormsApp1
             }
             DataTable dt = TIC.SelectTicketsByAssignVal(Form1.id);
             AgentListDGV.DataSource = dt;
+        }
+
+        private void AgentChart_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void Fillchart()
+        {
+            SqlConnection conn = new SqlConnection("data source=7231AMRIND4168L;initial catalog=EMSS;trusted_connection=true");
+            DataSet dt = new DataSet();
+            conn.Open();
+            string sql = "select AssignedTo,TicketIDre,Time_Taken_To_Activate,Time_Taken_To_Assign,Time_Taken_To_Resolve from Tickets right join TicketTime on Tickets.TicketID=TicketTime.TicketIDre where AssignedTo=@ato;";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@ato", Form1.id);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            //AdminChart.DataSource = dt;
+            DataView source = new DataView(dt.Tables[0]);
+            AgentChart.DataSource = source;
+            conn.Close();
+            AgentChart.Series["Time_Taken_To_Assign"].XValueMember = "TicketIDre";
+            AgentChart.Series["Time_Taken_To_Assign"].YValueMembers = "Time_Taken_To_Assign";
+            AgentChart.Series["Time_Taken_To_Activate"].XValueMember = "TicketIDre";
+            AgentChart.Series["Time_Taken_To_Activate"].YValueMembers = "Time_Taken_To_Activate";
+            AgentChart.Series["Time_Taken_To_Resolve"].XValueMember = "TicketIDre";
+            AgentChart.Series["Time_Taken_To_Resolve"].YValueMembers = "Time_Taken_To_Resolve";
+            AgentChart.DataBind();
+                
         }
     }
 }

@@ -87,6 +87,7 @@ namespace WindowsFormsApp1
             DataTable dt1 = TIC.SelectTickets();
             AllTicketsDGV.DataSource= dt1;
             FillComboBox();
+            Fillchart();
         }
         private void FillComboBox() 
         {
@@ -164,19 +165,25 @@ namespace WindowsFormsApp1
             ticST = Convert.ToInt32( AllTicketsDGV.Rows[rowIndex].Cells[5].Value);
 
         }
-        //public void Fillchart()
-        //{
-        //    SqlConnection conn = new SqlConnection("data source=7231AMRIND4168L;initial catalog=EMSS;trusted_connection=true");
-        //    DataTable dt = new DataTable();
-        //    conn.Open();
-        //    SqlDataAdapter da = new SqlDataAdapter("select DATEDIFF(MINUTE, (select CreatedAt from Tickets where TicketID='TICKET-036900A1'),(select AssignedAt from Tickets where TicketID='TICKET-036900A1') ) AS Time_Taken_To_Assign\r\n,DATEDIFF(MINUTE, (select AssignedAt from Tickets where TicketID='TICKET-036900A1'),(select ActiveAt from Tickets where TicketID='TICKET-036900A1') ) AS Time_Taken_To_Activate\r\n,DATEDIFF(MINUTE, (select ActiveAt from Tickets where TicketID='TICKET-036900A1'),(select ResolvedAt from Tickets where TicketID='TICKET-036900A1') ) AS Time_Taken_To_Activate;",conn);
-        //    da.Fill(dt);
-        //    AdminChart.DataSource = dt;
-        //    conn.Close();
-        //    AdminChart.Series["Series 1"].XValueMember = "min";
-        //    AdminChart.Series["Series 1"].YValueMembers = "min";
+        public void Fillchart()
+        {
+            SqlConnection conn = new SqlConnection("data source=7231AMRIND4168L;initial catalog=EMSS;trusted_connection=true");
+            DataSet dt = new DataSet();
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("Select TicketIDre, Time_Taken_To_Assign, Time_Taken_To_Activate,Time_Taken_To_Resolve from TicketTime", conn);
+            da.Fill(dt);
+            //AdminChart.DataSource = dt;
+            DataView source = new DataView(dt.Tables[0]);
+            AdminChart.DataSource = source;
+            conn.Close();
+            AdminChart.Series["Time_Taken_To_Assign"].XValueMember = "TicketIDre";
+            AdminChart.Series["Time_Taken_To_Assign"].YValueMembers = "Time_Taken_To_Assign";
+            AdminChart.Series["Time_Taken_To_Activate"].XValueMember = "TicketIDre";
+            AdminChart.Series["Time_Taken_To_Activate"].YValueMembers = "Time_Taken_To_Activate";
+            AdminChart.Series["Time_Taken_To_Resolve"].XValueMember = "TicketIDre";
+            AdminChart.Series["Time_Taken_To_Resolve"].YValueMembers = "Time_Taken_To_Resolve";
+            AdminChart.DataBind();
 
-
-        //}
+        }
     }
 }

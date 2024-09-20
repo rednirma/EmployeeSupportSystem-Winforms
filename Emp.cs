@@ -50,5 +50,10 @@ namespace WindowsFormsApp1
             DataTable dt = TIC.SelectTicketsByUser(Form1.id);
             EmployeeTicketsDGV.DataSource = dt;
         }
+
+        private void EmployeeChart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

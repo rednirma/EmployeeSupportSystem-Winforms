@@ -51,6 +51,7 @@
             // 
             // PasswordBoxLogin
             // 
+            this.PasswordBoxLogin.BackColor = System.Drawing.Color.Yellow;
             this.PasswordBoxLogin.Location = new System.Drawing.Point(374, 158);
             this.PasswordBoxLogin.Name = "PasswordBoxLogin";
             this.PasswordBoxLogin.PasswordChar = '*';
@@ -69,6 +70,7 @@
             // 
             // IdBoxLogin
             // 
+            this.IdBoxLogin.BackColor = System.Drawing.Color.Yellow;
             this.IdBoxLogin.Location = new System.Drawing.Point(374, 113);
             this.IdBoxLogin.Name = "IdBoxLogin";
             this.IdBoxLogin.Size = new System.Drawing.Size(100, 20);

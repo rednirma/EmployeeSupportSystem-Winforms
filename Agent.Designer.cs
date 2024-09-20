@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.AgentLabel = new System.Windows.Forms.Label();
             this.ShowAgentAnalyticsBtn = new System.Windows.Forms.Button();
             this.AgentListDGV = new System.Windows.Forms.DataGridView();
@@ -70,6 +71,8 @@
             // 
             // AgentListDGV
             // 
+            this.AgentListDGV.AllowUserToAddRows = false;
+            this.AgentListDGV.AllowUserToDeleteRows = false;
             this.AgentListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AgentListDGV.Location = new System.Drawing.Point(59, 88);
             this.AgentListDGV.Name = "AgentListDGV";
@@ -82,17 +85,36 @@
             chartArea1.Name = "ChartArea1";
             this.AgentChart.ChartAreas.Add(chartArea1);
             this.AgentChart.DataSource = this.ticketsBindingSource;
-            legend1.Name = "Legend1";
-            this.AgentChart.Legends.Add(legend1);
-            this.AgentChart.Location = new System.Drawing.Point(59, 88);
+            this.AgentChart.Location = new System.Drawing.Point(0, 88);
             this.AgentChart.Name = "AgentChart";
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series1.CustomProperties = "PixelPointWidth=30";
+            series1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.Name = "Time_Taken_To_Assign";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series2.CustomProperties = "PixelPointWidth=30";
+            series2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.Name = "Time_Taken_To_Activate";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series3.CustomProperties = "PixelPointWidth=30";
+            series3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsValueShownAsLabel = true;
+            series3.Name = "Time_Taken_To_Resolve";
             this.AgentChart.Series.Add(series1);
-            this.AgentChart.Size = new System.Drawing.Size(482, 280);
+            this.AgentChart.Series.Add(series2);
+            this.AgentChart.Series.Add(series3);
+            this.AgentChart.Size = new System.Drawing.Size(597, 280);
             this.AgentChart.TabIndex = 3;
             this.AgentChart.Text = "chart1";
+            this.AgentChart.Click += new System.EventHandler(this.AgentChart_Click);
             // 
             // ShowTicketBtn
             // 
@@ -146,10 +168,10 @@
             this.Controls.Add(this.RevertStatusBtn);
             this.Controls.Add(this.UpdateTicketBtn);
             this.Controls.Add(this.ShowTicketBtn);
-            this.Controls.Add(this.AgentListDGV);
             this.Controls.Add(this.ShowAgentAnalyticsBtn);
             this.Controls.Add(this.AgentLabel);
             this.Controls.Add(this.AgentChart);
+            this.Controls.Add(this.AgentListDGV);
             this.Name = "Agent";
             this.Size = new System.Drawing.Size(600, 420);
             this.Load += new System.EventHandler(this.Agent_Load);
