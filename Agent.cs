@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,11 @@ namespace WindowsFormsApp1
             AgentChart.Show();
             AgentListDGV.Hide();
             Fillchart();
+            label2.Show();
+            label3.Show();
+            label4.Show();
+
+
         }
 
         private void ShowTicketBtn_Click(object sender, EventArgs e)
@@ -39,7 +45,9 @@ namespace WindowsFormsApp1
 
             DataTable dt = TIC.SelectTicketsByAssignVal(Form1.id);
             AgentListDGV.DataSource = dt;
-            
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
         }
 
         private void Agent_Load(object sender, EventArgs e)
@@ -50,6 +58,9 @@ namespace WindowsFormsApp1
             AgentChart.Hide();
             DataTable dt = TIC.SelectTicketsByAssignVal(Form1.id);
             AgentListDGV.DataSource = dt;
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
         }
         public void HidAgent()
         {
@@ -57,6 +68,9 @@ namespace WindowsFormsApp1
             AgentChart.Hide();
             AgentListDGV.Hide();
             AgentChart.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
         }
 
         private void UpdateTicketBtn_Click(object sender, EventArgs e)

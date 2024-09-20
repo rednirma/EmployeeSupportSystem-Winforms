@@ -30,7 +30,10 @@ namespace WindowsFormsApp1
         }
 
         public void HideEverything()
-        { 
+        {
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
             AllTicketsDGV.Hide();
             UserListDGV.Hide();
             AdminChart.Hide();
@@ -40,6 +43,9 @@ namespace WindowsFormsApp1
             AllTicketsDGV.Hide();
             UserListDGV.Hide();
             AdminChart.Show();
+            label2.Show();
+            label3.Show();
+            label4.Show();
             //Fillchart();
         }
 
@@ -51,6 +57,10 @@ namespace WindowsFormsApp1
             DataTable dt1 = TIC.SelectTickets();
             AllTicketsDGV.DataSource = dt1;
             FillComboBox();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+
         }
 
         private void ViewUsersBtn_Click(object sender, EventArgs e)
@@ -60,6 +70,10 @@ namespace WindowsFormsApp1
             AdminChart.Hide();
             DataTable dt = UCD.SelectUsers();
             UserListDGV.DataSource = dt;
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+
         }
 
         private void ChangeUserRole_Click(object sender, EventArgs e)

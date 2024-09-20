@@ -26,12 +26,16 @@ namespace WindowsFormsApp1
             EmployeeChart.Hide();
             EmployeeChart.Hide();
             EmployeeTicketsDGV.Hide();
-            
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+
         }
         public void HidEmp()
         {
-
-            EmployeeChart.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
             EmployeeChart.Hide();
             EmployeeTicketsDGV.Hide();
 
@@ -45,6 +49,9 @@ namespace WindowsFormsApp1
             EmployeeTicketsDGV.DataSource = dt;
             EmployeeChart.Hide();
             EmployeeTicketsDGV.Show();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
 
         }
 
@@ -53,6 +60,9 @@ namespace WindowsFormsApp1
             EmployeeChart.Show();
             EmployeeTicketsDGV.Hide();
             Fillchart();
+            label2.Show();
+            label3.Show();
+            label4.Show();
         }
 
         private void CreateNewTicketBtn_Click(object sender, EventArgs e)
@@ -61,6 +71,11 @@ namespace WindowsFormsApp1
             CNT.ShowDialog();
             DataTable dt = TIC.SelectTicketsByUser(Form1.id);
             EmployeeTicketsDGV.DataSource = dt;
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            EmployeeChart.Hide();
+            EmployeeTicketsDGV.Hide();
         }
 
         private void EmployeeChart_Click(object sender, EventArgs e)

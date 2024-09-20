@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.UserListDGV = new System.Windows.Forms.DataGridView();
             this.AllTicketsDGV = new System.Windows.Forms.DataGridView();
             this.AdminChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -48,6 +48,10 @@
             this.eMSSDataSet = new WindowsFormsApp1.EMSSDataSet();
             this.eMSSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new WindowsFormsApp1.EMSSDataSetTableAdapters.UsersTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AllTicketsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdminChart)).BeginInit();
@@ -61,9 +65,9 @@
             this.UserListDGV.AllowUserToAddRows = false;
             this.UserListDGV.AllowUserToDeleteRows = false;
             this.UserListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UserListDGV.Location = new System.Drawing.Point(59, 88);
+            this.UserListDGV.Location = new System.Drawing.Point(0, 88);
             this.UserListDGV.Name = "UserListDGV";
-            this.UserListDGV.Size = new System.Drawing.Size(480, 280);
+            this.UserListDGV.Size = new System.Drawing.Size(597, 280);
             this.UserListDGV.TabIndex = 0;
             this.UserListDGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.UserListDGV_RowHeaderMouseClick);
             // 
@@ -73,53 +77,53 @@
             this.AllTicketsDGV.AllowUserToDeleteRows = false;
             this.AllTicketsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AllTicketsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.AllTicketsDGV.Location = new System.Drawing.Point(59, 88);
+            this.AllTicketsDGV.Location = new System.Drawing.Point(0, 88);
             this.AllTicketsDGV.Name = "AllTicketsDGV";
-            this.AllTicketsDGV.Size = new System.Drawing.Size(480, 280);
+            this.AllTicketsDGV.Size = new System.Drawing.Size(597, 280);
             this.AllTicketsDGV.TabIndex = 1;
             this.AllTicketsDGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.AllTicketsDGV_RowHeaderMouseClick);
             // 
             // AdminChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.AdminChart.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.AdminChart.ChartAreas.Add(chartArea3);
             this.AdminChart.Location = new System.Drawing.Point(0, 88);
             this.AdminChart.Name = "AdminChart";
-            series1.BorderWidth = 0;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series1.CustomProperties = "PixelPointWidth=25";
-            series1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.LegendText = "Time Taken To Assign";
-            series1.LegendToolTip = "Time Taken to Assign ";
-            series1.Name = "Time_Taken_To_Assign";
-            series1.ToolTip = "Time Taken to Assign";
-            series2.BorderWidth = 0;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            series2.CustomProperties = "PixelPointWidth=25";
-            series2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.IsValueShownAsLabel = true;
-            series2.LegendText = "Time Taken To Activate";
-            series2.LegendToolTip = "Time Taken to Activate";
-            series2.Name = "Time_Taken_To_Activate";
-            series2.ToolTip = "Time Taken to Activate";
-            series3.BorderWidth = 0;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            series3.CustomProperties = "PixelPointWidth=25";
-            series3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.IsValueShownAsLabel = true;
-            series3.LegendToolTip = "Time Taken to Resolve ";
-            series3.Name = "Time_Taken_To_Resolve";
-            series3.ToolTip = "Time Taken to Resolve";
-            this.AdminChart.Series.Add(series1);
-            this.AdminChart.Series.Add(series2);
-            this.AdminChart.Series.Add(series3);
+            series7.BorderWidth = 0;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series7.CustomProperties = "PixelPointWidth=25";
+            series7.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series7.IsValueShownAsLabel = true;
+            series7.LegendText = "Time Taken To Assign";
+            series7.LegendToolTip = "Time Taken to Assign ";
+            series7.Name = "Time_Taken_To_Assign";
+            series7.ToolTip = "Time Taken to Assign";
+            series8.BorderWidth = 0;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series8.CustomProperties = "PixelPointWidth=25";
+            series8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series8.IsValueShownAsLabel = true;
+            series8.LegendText = "Time Taken To Activate";
+            series8.LegendToolTip = "Time Taken to Activate";
+            series8.Name = "Time_Taken_To_Activate";
+            series8.ToolTip = "Time Taken to Activate";
+            series9.BorderWidth = 0;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series9.CustomProperties = "PixelPointWidth=25";
+            series9.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series9.IsValueShownAsLabel = true;
+            series9.LegendToolTip = "Time Taken to Resolve ";
+            series9.Name = "Time_Taken_To_Resolve";
+            series9.ToolTip = "Time Taken to Resolve";
+            this.AdminChart.Series.Add(series7);
+            this.AdminChart.Series.Add(series8);
+            this.AdminChart.Series.Add(series9);
             this.AdminChart.Size = new System.Drawing.Size(597, 280);
             this.AdminChart.TabIndex = 2;
             this.AdminChart.Text = "chart1";
@@ -197,7 +201,7 @@
             // AgentSelectCBox
             // 
             this.AgentSelectCBox.FormattingEnabled = true;
-            this.AgentSelectCBox.Location = new System.Drawing.Point(456, 35);
+            this.AgentSelectCBox.Location = new System.Drawing.Point(458, 49);
             this.AgentSelectCBox.Name = "AgentSelectCBox";
             this.AgentSelectCBox.Size = new System.Drawing.Size(85, 21);
             this.AgentSelectCBox.TabIndex = 10;
@@ -221,11 +225,58 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(455, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Select Agent";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(85, 371);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 18);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Time Taken to Assign";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(226, 371);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 18);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Time Taken to Activate";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(377, 371);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 18);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Time Taken to Resolve";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AgentSelectCBox);
             this.Controls.Add(this.RevertUserRoleBtn);
             this.Controls.Add(this.AssignTicketBtn);
@@ -268,5 +319,9 @@
         private System.Windows.Forms.BindingSource usersBindingSource;
         private EMSSDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.ComboBox AgentSelectCBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
