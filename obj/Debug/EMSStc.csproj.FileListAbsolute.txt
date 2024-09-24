@@ -1,0 +1,16 @@
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.csproj.AssemblyReference.cache
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.admin.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.Agent.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.Emp.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.Form1.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.Properties.Resources.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.csproj.GenerateResource.cache
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.csproj.CoreCompileInputs.cache
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\bin\Debug\EMSStc.exe.config
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\bin\Debug\EMSStc.exe
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\bin\Debug\EMSStc.pdb
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.exe
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.pdb
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.AdminUc.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.AgentUc.resources
+C:\2024\practice projects\windows forms\emss-with-tabc\EMSStc\obj\Debug\EMSStc.EmpUC.resources
